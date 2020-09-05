@@ -20,9 +20,11 @@ using System;
     {
         Debug.Log("Attacking and doing " + damage + " damage");
         Text enemyHealth = GameObject.Find("EnemyHealth").GetComponent<Text>();
-        int enemyHealthInt = Int32.Parse(enemyHealth.text);
+        int enemyHealthInt = int.Parse(enemyHealth.text);
         int newHealth = enemyHealthInt - damage;
         enemyHealth.text = newHealth.ToString();
+
+        FindObjectOfType<Enemy>().currentHealth -= damage;
 
     }
 
@@ -30,9 +32,20 @@ using System;
     {
         Debug.Log("Heal");
         Text playerHealth = GameObject.Find("PlayerHealth").GetComponent<Text>();
-        int playerHealthInt = Int32.Parse(playerHealth.text);
+        int playerHealthInt = int.Parse(playerHealth.text);
         int newHealth = playerHealthInt + healthPoints;
         playerHealth.text = newHealth.ToString();
+    }
+    
+    protected void Shield(int shieldPoints)
+    {
+        Debug.Log("Adding shield points");
+    }
+
+    protected void ApplyEffect(Unit unit, Effect effect)
+    {
+        Debug.Log("Adding effect");
+        unit.effects.Add(effect);
     }
 
 }
