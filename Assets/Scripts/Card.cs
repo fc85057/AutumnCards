@@ -19,22 +19,27 @@ using System;
     protected void Attack(int damage)
     {
         Debug.Log("Attacking and doing " + damage + " damage");
+        /*
         Text enemyHealth = GameObject.Find("EnemyHealth").GetComponent<Text>();
         int enemyHealthInt = int.Parse(enemyHealth.text);
         int newHealth = enemyHealthInt - damage;
         enemyHealth.text = newHealth.ToString();
-
-        FindObjectOfType<Enemy>().currentHealth -= damage;
+        */
+        int playerStrength = FindObjectOfType<Player>().currentStrength;
+        FindObjectOfType<Enemy>().TakeDamage(damage + playerStrength);
 
     }
 
     protected void Heal(int healthPoints)
     {
         Debug.Log("Heal");
+        /*
         Text playerHealth = GameObject.Find("PlayerHealth").GetComponent<Text>();
         int playerHealthInt = int.Parse(playerHealth.text);
         int newHealth = playerHealthInt + healthPoints;
         playerHealth.text = newHealth.ToString();
+        */
+        FindObjectOfType<Player>().currentHealth += healthPoints;
     }
     
     protected void Shield(int shieldPoints)

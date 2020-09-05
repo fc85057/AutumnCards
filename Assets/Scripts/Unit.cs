@@ -13,6 +13,9 @@ public class Unit : MonoBehaviour
     public int standardStrength = 0;
     public int currentStrength;
 
+    public int standardHealing = 0;
+    public int currentHealing;
+
     public List<Effect> effects;
 
     private void Start()
@@ -20,7 +23,23 @@ public class Unit : MonoBehaviour
         currentHealth = maxHealth;
         currentShield = 0;
         currentStrength = standardStrength;
+        currentHealing = standardHealing;
         effects = new List<Effect>();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        for (int i = 0; i < damage; i++)
+        {
+            if (currentShield > 0)
+            {
+                currentShield--;
+            }
+            else
+            {
+                currentHealth--;
+            }
+        }
     }
 
 }

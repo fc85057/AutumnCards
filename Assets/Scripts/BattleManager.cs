@@ -29,7 +29,8 @@ public class BattleManager : MonoBehaviour
 
     void BattleStart()
     {
-        cardManager.InstantiateDeckTest();
+        // cardManager.InstantiateDeckTest();
+        cardManager.InitializeDeck();
         player = playerUnit.GetComponent<Player>();
         enemy = enemyUnit.GetComponent<Enemy>();
         currentStatus = BattleStatus.PlayerTurn;
@@ -52,6 +53,7 @@ public class BattleManager : MonoBehaviour
         Debug.Log("Enemy is taking turn");
         yield return new WaitForSeconds(5f);
         currentStatus = BattleStatus.PlayerTurn;
+        PlayerTurn();
     }
 
     public void CardClicked(Card card)
@@ -60,6 +62,7 @@ public class BattleManager : MonoBehaviour
             && canPlayCard)
         {
             StartCoroutine(PlayCard(card));
+            // uiManager.UpdateUI(player, enemy);
         }
     }
 
@@ -82,9 +85,10 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough energy");
+            Debug.Log("Not enough energy. Only have " + 
+                player.currentEnergy);
         }
-        uiManager.UpdateUI(player, enemy);
+        //uiManager.UpdateUI(player, enemy);
         yield return new WaitForSeconds(2f);
         canPlayCard = true;
     }

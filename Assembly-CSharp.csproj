@@ -62,19 +62,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AttackCard.cs" />
-    <Compile Include="Assets\BattleManager.cs" />
-    <Compile Include="Assets\Card.cs" />
-    <Compile Include="Assets\CardDisplay.cs" />
-    <Compile Include="Assets\CardManager.cs" />
-    <Compile Include="Assets\CardSpawner.cs" />
-    <Compile Include="Assets\Effect.cs" />
-    <Compile Include="Assets\EffectCard.cs" />
-    <Compile Include="Assets\Enemy.cs" />
-    <Compile Include="Assets\HealCard.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\UIManager.cs" />
-    <Compile Include="Assets\Unit.cs" />
+    <Compile Include="Assets\Scripts\AttackCard.cs" />
+    <Compile Include="Assets\Scripts\BattleManager.cs" />
+    <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\CardDisplay.cs" />
+    <Compile Include="Assets\Scripts\CardManager.cs" />
+    <Compile Include="Assets\Scripts\CardSpawner.cs" />
+    <Compile Include="Assets\Scripts\Effect.cs" />
+    <Compile Include="Assets\Scripts\EffectCard.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\HealCard.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Unit.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/CF/AutumnCards/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
